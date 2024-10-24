@@ -2,16 +2,16 @@ var salir = true;
 var opc = 0;
 
 var nombre1 = "";
-var cantidad1;
-var precio1;
+var cantidad1=0;
+var precio1=0;
 
 var nombre2 = "";
-var cantidad2;
-var precio2;
+var cantidad2=0;
+var precio2=0;
 
 var nombre3 = "";
-var cantidad3;
-var precio3;
+var cantidad3=0;
+var precio3=0;
 
 var totalProductos = 0;
 
@@ -77,8 +77,9 @@ function compra(nombre, cuantos) {
         if (cantidad3 < 5) {
             console.log("Quedan pocas unidades de " + nombre3);
         }
-        return total;
+         total;
     }
+    console.log("Total a pagar :" + total);
 }
 function productosDisponibles() {
     if (totalProductos == 0) {
@@ -102,6 +103,7 @@ function productosDisponibles() {
         console.log("Precio :" + precio3);
         console.log("");
     }
+    
 }
 
 while (salir) {
@@ -123,7 +125,7 @@ while (salir) {
 
             var total = compra(nombre, cantidad);
 
-            console.log("Total a pagar :" + total);
+            
 
             break;
         case 3:
