@@ -2,16 +2,16 @@ var salir = true;
 var opc = 0;
 
 var nombre1 = "";
-var cantidad1;
-var precio1;
+var cantidad1=0;
+var precio1=0;
 
 var nombre2 = "";
-var cantidad2;
-var precio2;
+var cantidad2=0;
+var precio2=0;
 
 var nombre3 = "";
-var cantidad3;
-var precio3;
+var cantidad3=0;
+var precio3=0;
 
 var totalProductos = 0;
 
@@ -61,6 +61,7 @@ function compra(nombre, cuantos) {
         console.log("Tienes un 10% de descuento");
         total = total * 0.9;
     }
+    console.log("Total a pagar :" + total);
 
     if (nombre == nombre1) {
         cantidad1 = cantidad1 - cuantos;
@@ -77,8 +78,9 @@ function compra(nombre, cuantos) {
         if (cantidad3 < 5) {
             console.log("Quedan pocas unidades de " + nombre3);
         }
-        return total;
+        
     }
+    
 }
 function productosDisponibles() {
     if (totalProductos == 0) {
@@ -120,10 +122,7 @@ while (salir) {
             productosDisponibles();
             var nombre = prompt("Que producto desea comprar");
             var cantidad = Number(prompt("Cuantos quiere comprar"));
-
-            var total = compra(nombre, cantidad);
-
-            console.log("Total a pagar :" + total);
+            compra(nombre,cantidad);
 
             break;
         case 3:
